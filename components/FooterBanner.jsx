@@ -1,8 +1,43 @@
+import moment from 'moment'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
-const FooterBanner = () => {
+import { urlFor } from '../lib/client'
+
+const FooterBanner = ({ banner: {
+  discount, smallText, midText, largeText, largeText2, saleTime, buttonText, product, image, desc
+} }) => {
   return (
-    <div>FooterBanner</div>
+    <div className='footer-banner-container'>
+      <div className='banner-desc'>
+        <div className="left">
+          <p>{discount}</p>
+          <h3>{largeText}</h3>
+          <h3>{largeText2}</h3>
+          <p>{moment(saleTime).format('MMMM Do YYYY')}</p>
+        </div>
+
+        <div className="right">
+          <p>{smallText}</p>
+          <h3>{midText}</h3>
+          <p>{desc}</p>
+          <Link href={`/product/${product}`} >
+            <button type='button'>{buttonText}</button>
+          </Link>
+        </div>
+
+        <div className='footer-banner-image'>
+          <Image
+            src={urlFor(image)}
+            alt={product}
+            width={555}
+            height={555}
+          />
+        </div>
+
+      </div>
+    </div>
   )
 }
 
