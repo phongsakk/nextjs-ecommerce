@@ -27,7 +27,7 @@ const FooterBanner = ({ banner: {
           </Link>
         </div>
 
-        <div className='footer-banner-image'>
+        <div className='_img footer-banner-image'>
           <Image
             src={urlFor(image)}
             alt={product}
