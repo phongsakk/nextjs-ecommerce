@@ -1,13 +1,17 @@
 import Image from 'next/image'
 import React from 'react'
 import { AiFillStar, AiOutlineMinus, AiOutlinePlus, AiOutlineStar } from 'react-icons/ai'
-import Product from '../../components/Product'
 
+import { useStateContext } from '../../context/StateContext'
+import Product from '../../components/Product'
 import { client, urlFor } from '../../lib/client'
 
 const ProductDetails = ({ product, products }) => {
   const [index, setIndex] = React.useState(0);
+  const { decQty, incQty, qty, onAdd } = useStateContext()
+
   const { image, name, details, price } = product
+  
   return (
     <div>
       <div className="product-detail-container">
@@ -65,13 +69,13 @@ const ProductDetails = ({ product, products }) => {
             <h3>Quantity: </h3>
 
             <p className='quantity-desc'>
-              <span className='minus' onClick={() => { }}>
+              <span className='minus' onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className='num'>
-                0
+                {qty}
               </span>
-              <span className='plus'>
+              <span className='plus' onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
@@ -81,7 +85,7 @@ const ProductDetails = ({ product, products }) => {
             <button
               type='button'
               className='add-to-cart'
-              onClick={() => { }}
+              onClick={() => onAdd(product, qty)}
             >
               Add to Cart
             </button>
