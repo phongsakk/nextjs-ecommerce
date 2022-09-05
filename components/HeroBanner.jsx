@@ -5,11 +5,8 @@ import React from 'react'
 import { urlFor } from '../lib/client'
 
 const HeroBanner = ({ banner }) => {
-
-  console.log({ b: banner })
   if (!banner) return null
 
-  console.log({ u: urlFor(banner.image) })
   return (
     <div className='hero-banner-container'>
       <div>
