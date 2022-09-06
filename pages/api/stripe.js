@@ -42,7 +42,7 @@ export const handler = async (req, res) => {
 
       res.status(201).json(session)
     } catch (error) {
-      throw new Error(error)
+      console.log({ error })
     }
   }
 }
