@@ -11,11 +11,13 @@ const Product = ({ product: { image, name, slug, price } }) => {
         href={`/product/${slug.current}`}
       >
         <div className='product-card'>
-          <div className='_img product-image' style={{width: 250, height: 250}}>
+          <div className='_img product-image' >
             <Image 
               src={urlFor(image && image[0])}
               alt={slug.current}
-              layout='fill'
+              // layout='fill'
+              width={250}
+              height={250}
             />
           </div>
           <div className="product-name">
