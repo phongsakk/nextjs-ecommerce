@@ -626,6 +626,7 @@ span.text-red {
   border-right: 1px solid gray;
   font-size: 20px;
   min-width: 48px;
+  user-select: none;
 }
 
 .quantity-desc .plus {

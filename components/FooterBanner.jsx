@@ -31,8 +31,7 @@ const FooterBanner = ({ banner: {
           <Image
             src={urlFor(image)}
             alt={product}
-            width={555}
-            height={555}
+            layout='fill'
           />
         </div>
 

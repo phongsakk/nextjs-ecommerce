@@ -15,7 +15,6 @@ const Product = ({ product: { image, name, slug, price } }) => {
             <Image 
               src={urlFor(image && image[0])}
               alt={slug.current}
-              // layout='fill'
               width={250}
               height={250}
             />
