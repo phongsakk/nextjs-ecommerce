@@ -27,14 +27,15 @@ const FooterBanner = ({ banner: {
           </Link>
         </div>
 
-        <div className='_img footer-banner-image'>
-          <Image
-            src={urlFor(image)}
-            alt={product}
-            layout='fill'
-          />
+        <div className='footer-banner-image'>
+          <div className='_img' style={{ width: 400, height: 400 }}>
+            <Image
+              src={urlFor(image)}
+              alt={product}
+              layout='fill'
+            />
+          </div>
         </div>
-
       </div>
     </div>
   )
